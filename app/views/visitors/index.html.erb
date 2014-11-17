@@ -1,0 +1,17 @@
+<div class="jumbotron center">
+	<h1>Welcome to curiXO!</h1>
+       
+    <% if user_signed_in? %>
+         	# do something
+    <% else %>
+         <p>
+         <%= link_to "Log in", new_user_session_path, class: "btn btn-default btn-lg" %>
+         <%= link_to "Sign up", new_user_registration_path, class: "btn btn-primary btn-lg" %>
+       	 </p>
+    <% end %> 
+    <% if user_signed_in? %>
+    	<% if current_user.admin? %>
+    		<p><%= link_to 'Users:', users_path %> <%= User.count %> registered</p>
+  		<% end %>
+	<% end %> 
+</div>
