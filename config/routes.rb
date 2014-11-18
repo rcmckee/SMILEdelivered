@@ -6,6 +6,6 @@ Rails.application.routes.draw do
   get 'about' => 'pages#about'
   get 'schedule' => 'pages#schedule'
   get 'visitors' => 'visitors#index'
-  devise_for :users
+  devise_for :users, ActiveAdmin::Devise.config
   resources :users
 end
